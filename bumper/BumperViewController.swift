@@ -35,6 +35,7 @@ public class BumperViewController: UIViewController {
 
         setupUI()
         initTableView()
+        initSwitch()
     }
 }
 
@@ -93,6 +94,15 @@ private extension BumperViewController {
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[table]|",
             options: [], metrics: metrics, views: views))
 
+    }
+
+    private func initSwitch() {
+        enableBumperSwitch.setOn(viewModel.enabled, animated: false)
+        enableBumperSwitch.addTarget(self, action: #selector(switchValueChanged), forControlEvents: .ValueChanged)
+    }
+
+    private dynamic func switchValueChanged() {
+        viewModel.setEnabled(enableBumperSwitch.on)
     }
 }
 
