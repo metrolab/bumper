@@ -1,9 +1,9 @@
 {
   "name": "bumper",
   "version": "0.1.0",
-  "summary": "A short description of bumper.",
+  "summary": "A/B Testing debug helper framework for iOS",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/bumper",
+  "homepage": "https://github.com/letgoapp/bumper",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,14 @@
     "Eli Kohen": "eli.kohen@letgo.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/bumper.git",
+    "git": "git@github.com:letgoapp/bumper.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/letgo",
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "bumper/Classes/**/*"
+  "requires_arc": true,
+  "source_files": "bumper/**/*",
+  "frameworks": "UIKit"
 }

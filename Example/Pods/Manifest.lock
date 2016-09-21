@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  bumper: 6ddec002dd9c90ae902d48c286aff90b972bca59
+  bumper: a83a58d331d00a62a4bc53e23ac492301e26bd4e
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   Quick: 13a2a2b19a5d8e3ed4fd0c36ee46597fd77ebf71
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import bumper
 
 class ViewController: UIViewController {
 
@@ -20,5 +21,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func openBumper(sender: AnyObject) {
+        let vc = BumperViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 

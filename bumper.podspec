@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'bumper/Classes/**/*'
+  s.source_files = 'bumper/**/*'
 
   s.frameworks = 'UIKit'
 end
