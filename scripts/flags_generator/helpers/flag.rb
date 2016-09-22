@@ -1,8 +1,7 @@
 class Flag 
-	def initialize(name, values, default, description)
+	def initialize(name, values, description)
 		@name = name
 		@values = values
-		@default = default
 		@description = description
 	end
 
@@ -32,7 +31,7 @@ class Flag
 	end
 
 	def defaultCase
-		return "."+@default
+		return "."+@values.first
 	end
 
 	def description
@@ -40,6 +39,6 @@ class Flag
 	end
 
 	def print
-		puts "Name: #{@name}, values: #{@values}, default: #{@default}, description: #{@description}"
+		puts "Name: #{@name}, values: #{@values}, description: #{@description}"
 	end
 end

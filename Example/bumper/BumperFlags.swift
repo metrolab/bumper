@@ -16,8 +16,8 @@ extension Bumper  {
     } 
 
     var exampleTest1: ExampleTest1 {
-        guard let value = Bumper.valueForKey(ExampleTest1.key) else { return .Second }
-        return ExampleTest1(rawValue: value) ?? .Second
+        guard let value = Bumper.valueForKey(ExampleTest1.key) else { return .First }
+        return ExampleTest1(rawValue: value) ?? .First
     }
 
     var pacoTest: PacoTest {
@@ -26,15 +26,15 @@ extension Bumper  {
     }
 
     var juanTest: JuanTest {
-        guard let value = Bumper.valueForKey(JuanTest.key) else { return .Third }
-        return JuanTest(rawValue: value) ?? .Third
+        guard let value = Bumper.valueForKey(JuanTest.key) else { return .First }
+        return JuanTest(rawValue: value) ?? .First
     } 
 }
 
 
 enum ExampleTest1: String, BumperFlag  {
     case First, Second, Third
-    static var defaultValue: String { return ExampleTest1.Second.rawValue }
+    static var defaultValue: String { return ExampleTest1.First.rawValue }
     static var enumValues: [ExampleTest1] { return [.First, .Second, .Third]}
     static var values: [String] { return enumValues.map{$0.rawValue} }
     static var description: String { return "Ajan Gramenawer" }
@@ -50,7 +50,7 @@ enum PacoTest: String, BumperFlag  {
 
 enum JuanTest: String, BumperFlag  {
     case First, Second, Third
-    static var defaultValue: String { return JuanTest.Third.rawValue }
+    static var defaultValue: String { return JuanTest.First.rawValue }
     static var enumValues: [JuanTest] { return [.First, .Second, .Third]}
     static var values: [String] { return enumValues.map{$0.rawValue} }
     static var description: String { return "Hola que tal juan" }

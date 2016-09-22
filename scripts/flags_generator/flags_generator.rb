@@ -45,12 +45,9 @@ def read_flags(source_json)
 		values = jsonFlag["values"]
 		show_error "Flag #{name} needs to have values" if values.nil? || values.empty?
 		show_error "Flag #{name} values needs to be an array of strings" unless values.kind_of?(Array)
-		default = jsonFlag["default"]
-		show_error "Flag #{name} needs to have a default value" if default.nil? || default.empty?
-		show_error "Default " + "#{default}".green + " is not one of the values of #{name}, please select one of " + "#{values}".cyan if !values.include? default
 		description = jsonFlag["description"]
 		show_error "Flag #{name} needs to have a description value" if description.nil? || description.empty?
-		flag = Flag.new(name, values, default, description)
+		flag = Flag.new(name, values, description)
 		flag.print
 		flagsArray << flag
 	end 
