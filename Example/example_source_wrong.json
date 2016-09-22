@@ -2,7 +2,7 @@
 	{
 		"name": "ExampleTest1",
 		"values": ["First", "Second", "Third"],
-		"default": "Second",
+		"default": "Seond",
 		"description": "Ajan Gramenawer"
 	},
 	{

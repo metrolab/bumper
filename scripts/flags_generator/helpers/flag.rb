@@ -38,4 +38,8 @@ class Flag
 	def description
 		return @description
 	end
+
+	def print
+		puts "Name: #{@name}, values: #{@values}, default: #{@default}, description: #{@description}"
+	end
 end

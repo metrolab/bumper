@@ -32,6 +32,29 @@ end
 def read_flags(source_json)
 	puts "Processing: #{source_json}".cyan
 
+	file = File.open(source_json, "rb")
+	json = file.read
+	parsed = JSON.parse(json)
+
+	show_error "Json root must be an array" unless parsed.kind_of?(Array)
+
+	flagsArray = Array.new
+	parsed.each do |jsonFlag|
+		name = jsonFlag["name"]
+		show_error "Flag needs to have a name" if name.nil? || name.empty?
+		values = jsonFlag["values"]
+		show_error "Flag #{name} needs to have values" if values.nil? || values.empty?
+		show_error "Flag #{name} values needs to be an array of strings" unless values.kind_of?(Array)
+		default = jsonFlag["default"]
+		show_error "Flag #{name} needs to have a default value" if default.nil? || default.empty?
+		show_error "Default " + "#{default}".green + " is not one of the values of #{name}, please select one of " + "#{values}".cyan if !values.include? default
+		description = jsonFlag["description"]
+		show_error "Flag #{name} needs to have a description value" if description.nil? || description.empty?
+		flag = Flag.new(name, values, default, description)
+		flag.print
+		flagsArray << flag
+	end 
+	return Flags.new(flagsArray)
 end
 
 # Parsing and commandline checks
@@ -51,9 +74,5 @@ destination_folder = options[:destination]
 show_error "File #{source_json} doesn't exist" unless File.file?(source_json)
 show_error "Folder #{destination_folder} doesn't exist" unless File.exist?(destination_folder)
 
-# @flags = read_flags(source_json)
-flag1 = Flag.new("FlagTest1", ["value1", "value2", "value3"], "value1", "Flag Test 1")
-flag2 = Flag.new("FlagTest2", ["value1", "value2", "value3"], "value1", "Flag Test 2")
-flag3 = Flag.new("FlagTest3", ["value1", "value2", "value3"], "value1", "Flag Test 3")
-@flags = Flags.new([flag1, flag2, flag3])
+@flags = read_flags(source_json)
 generate_flags(destination_folder)

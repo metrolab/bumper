@@ -12,47 +12,47 @@ import bumper
 
 extension Bumper  {
     static func initialize() {
-        Bumper.initialize([FlagTest1.self, FlagTest2.self, FlagTest3.self])
+        Bumper.initialize([ExampleTest1.self, PacoTest.self, JuanTest.self])
     } 
 
-    var flagTest1: FlagTest1 {
-        guard let value = Bumper.valueForKey(FlagTest1.key) else { return .value1 }
-        return FlagTest1(rawValue: value) ?? .value1
+    var exampleTest1: ExampleTest1 {
+        guard let value = Bumper.valueForKey(ExampleTest1.key) else { return .Second }
+        return ExampleTest1(rawValue: value) ?? .Second
     }
 
-    var flagTest2: FlagTest2 {
-        guard let value = Bumper.valueForKey(FlagTest2.key) else { return .value1 }
-        return FlagTest2(rawValue: value) ?? .value1
+    var pacoTest: PacoTest {
+        guard let value = Bumper.valueForKey(PacoTest.key) else { return .First }
+        return PacoTest(rawValue: value) ?? .First
     }
 
-    var flagTest3: FlagTest3 {
-        guard let value = Bumper.valueForKey(FlagTest3.key) else { return .value1 }
-        return FlagTest3(rawValue: value) ?? .value1
+    var juanTest: JuanTest {
+        guard let value = Bumper.valueForKey(JuanTest.key) else { return .Third }
+        return JuanTest(rawValue: value) ?? .Third
     } 
 }
 
 
-enum FlagTest1: String, BumperFlag  {
-    case value1, value2, value3
-    static var defaultValue: String { return FlagTest1.value1.rawValue }
-    static var enumValues: [FlagTest1] { return [.value1, .value2, .value3]}
+enum ExampleTest1: String, BumperFlag  {
+    case First, Second, Third
+    static var defaultValue: String { return ExampleTest1.Second.rawValue }
+    static var enumValues: [ExampleTest1] { return [.First, .Second, .Third]}
     static var values: [String] { return enumValues.map{$0.rawValue} }
-    static var description: String { return "Flag Test 1" }
+    static var description: String { return "Ajan Gramenawer" }
 }
 
-enum FlagTest2: String, BumperFlag  {
-    case value1, value2, value3
-    static var defaultValue: String { return FlagTest2.value1.rawValue }
-    static var enumValues: [FlagTest2] { return [.value1, .value2, .value3]}
+enum PacoTest: String, BumperFlag  {
+    case First, Second, Third
+    static var defaultValue: String { return PacoTest.First.rawValue }
+    static var enumValues: [PacoTest] { return [.First, .Second, .Third]}
     static var values: [String] { return enumValues.map{$0.rawValue} }
-    static var description: String { return "Flag Test 2" }
+    static var description: String { return "Hola que tal paco " }
 }
 
-enum FlagTest3: String, BumperFlag  {
-    case value1, value2, value3
-    static var defaultValue: String { return FlagTest3.value1.rawValue }
-    static var enumValues: [FlagTest3] { return [.value1, .value2, .value3]}
+enum JuanTest: String, BumperFlag  {
+    case First, Second, Third
+    static var defaultValue: String { return JuanTest.Third.rawValue }
+    static var enumValues: [JuanTest] { return [.First, .Second, .Third]}
     static var values: [String] { return enumValues.map{$0.rawValue} }
-    static var description: String { return "Flag Test 3" }
+    static var description: String { return "Hola que tal juan" }
 }
 
