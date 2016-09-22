@@ -27,9 +27,16 @@ class BumperViewModel {
     private(set) var enabled: Bool
     private var viewData: [BumperViewData]
 
-    init() {
-        viewData = Bumper.bumperViewData
-        enabled = Bumper.enabled
+    private let bumper: Bumper
+
+    convenience init() {
+        self.init(bumper: Bumper.sharedInstance)
+    }
+
+    init(bumper: Bumper) {
+        self.bumper = bumper
+        self.viewData = bumper.bumperViewData
+        self.enabled = bumper.enabled
     }
 
     var featuresCount: Int {
@@ -50,13 +57,13 @@ class BumperViewModel {
 
     func selectedFeature(index: Int, item: String) {
         let data = viewData[index]
-        Bumper.setValueForKey(data.key, value: item)
-        viewData = Bumper.bumperViewData
+        bumper.setValueForKey(data.key, value: item)
+        viewData = bumper.bumperViewData
         delegate?.featuresUpdated()
     }
 
     func setEnabled(enabled: Bool) {
-        Bumper.enabled = enabled
+        bumper.enabled = enabled
         self.enabled = enabled
     }
 }

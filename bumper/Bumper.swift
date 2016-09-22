@@ -9,57 +9,66 @@
 import Foundation
 
 public class Bumper {
-    public internal(set) static var enabled: Bool = false {
+
+    // MARK: - Public static
+
+    public static func initialize(bumperFlags: [BumperFlag.Type]) {
+        Bumper.sharedInstance.initialize(bumperFlags)
+    }
+
+    public static func valueForKey(key: String) -> String? {
+        return Bumper.sharedInstance.valueForKey(key)
+    }
+
+    // MARK: - Internal
+
+    static let sharedInstance: Bumper = Bumper(bumperDAO: NSUserDefaults.standardUserDefaults())
+
+    private static let bumperEnabledKey = "bumper_enabled"
+    private static let bumperPrefix = "bumper_"
+
+    var enabled: Bool = false {
         didSet {
-            let userDefaults = NSUserDefaults.standardUserDefaults()
-            userDefaults.setBool(enabled, forKey: "bumper_enabled")
-            userDefaults.synchronize()
+            bumperDAO.setBool(enabled, forKey: Bumper.bumperEnabledKey)
+            bumperDAO.synchronize()
         }
     }
-    static var cache = [String: String]()
-    static var flags: [BumperFlag.Type] = []
+    private var cache = [String: String]()
+    private var flags: [BumperFlag.Type] = []
 
-    static var bumperViewData: [BumperViewData] {
+    var bumperViewData: [BumperViewData] {
         return flags.flatMap { flagType in
             let value = valueForKey(flagType.key) ?? flagType.defaultValue
             return BumperViewData(key: flagType.key, description: flagType.description, value: value, options: flagType.values)
         }
     }
 
-    public static func initialize(bumperFlags: [BumperFlag.Type]) {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        enabled = userDefaults.boolForKey("bumper_enabled")
+    private let bumperDAO: BumperDAO
+
+    init(bumperDAO: BumperDAO) {
+        self.bumperDAO = bumperDAO
+    }
+
+    func initialize(bumperFlags: [BumperFlag.Type]) {
+        enabled = bumperDAO.boolForKey(Bumper.bumperEnabledKey)
 
         cache.removeAll()
         flags = bumperFlags
         flags.forEach({
-            guard let value = userDefaults.stringForKey($0.key) else { return }
+            guard let value = bumperDAO.stringForKey(Bumper.bumperPrefix + $0.key) else { return }
             cache[$0.key] = value
         })
     }
 
-    public static func valueForKey(key: String) -> String? {
+    func valueForKey(key: String) -> String? {
         return cache[key]
     }
 
-    static func setValueForKey(key: String, value: String) {
+    func setValueForKey(key: String, value: String) {
         cache[key] = value
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setObject(value, forKey: key)
-        userDefaults.synchronize()
-    }
-
-}
-
-public protocol BumperFlag {
-    static var key: String { get }
-    static var values: [String] { get }
-    static var defaultValue: String { get }
-    static var description: String { get }
-}
-
-public extension BumperFlag {
-    static var key: String {
-        return String(Self)
+        bumperDAO.setObject(value, forKey: Bumper.bumperPrefix + key)
+        bumperDAO.synchronize()
     }
 }
+
+extension NSUserDefaults: BumperDAO {}
