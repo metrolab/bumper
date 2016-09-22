@@ -12,6 +12,10 @@ public class Bumper {
 
     // MARK: - Public static
 
+    public static var enabled: Bool {
+        return Bumper.sharedInstance.enabled
+    }
+
     public static func initialize(bumperFlags: [BumperFlag.Type]) {
         Bumper.sharedInstance.initialize(bumperFlags)
     }
