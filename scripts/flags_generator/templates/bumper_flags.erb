@@ -15,9 +15,10 @@ extension Bumper  {
         Bumper.initialize(<%= @flags.bumperInitParams %>)
     } <% @flags.flags.each do |flag| %>
 
-    var <%= flag.varName %>: <%= flag.objectName %> {
-        guard let value = Bumper.valueForKey(<%= flag.objectName %>.key) else { return <%= flag.defaultCase %> }
-        return <%= flag.objectName %>(rawValue: value) ?? <%= flag.defaultCase %>
+    var <%= flag.varName %>: <%= flag.varClassName %> {
+        guard let value = Bumper.valueForKey(<%= flag.objectName %>.key) else { return <%= flag.varDefaultCase %> }
+<% if flag.isBool %>        return <%= flag.objectName %>(rawValue: value)?.asBool ?? <%= flag.varDefaultCase %><% else 
+%>        return <%= flag.objectName %>(rawValue: value) ?? <%= flag.varDefaultCase %> <% end %>
     }<% end %> 
 }
 
@@ -27,6 +28,7 @@ enum <%= flag.objectName %>: String, BumperFlag  {
     static var defaultValue: String { return <%= flag.objectName %><%= flag.defaultCase %>.rawValue }
     static var enumValues: [<%= flag.objectName %>] { return <%= flag.allCases %>}
     static var values: [String] { return enumValues.map{$0.rawValue} }
-    static var description: String { return "<%= flag.description %>" }
+    static var description: String { return "<%= flag.description %>" } <% if flag.isBool %>
+    var asBool: Bool { return self == .Yes }<% end %>
 }
 <% end %>

@@ -3,6 +3,17 @@ class Flag
 		@name = name
 		@values = values
 		@description = description
+		@isBool = false
+		if values.length == 2
+			@isBool = values.first.isBool && values.last.isBool
+			if @isBool 
+				@values = values.first.boolValue ? ["Yes", "No"] : ["No", "Yes"]
+			end
+		end
+	end
+
+	def isBool 
+		return @isBool 
 	end
 
 	def classInstance 
@@ -15,6 +26,14 @@ class Flag
 
 	def varName 
 		return @name.uncapitalize
+	end
+
+	def varClassName
+		return @isBool ? "Bool" : @name 
+	end
+
+	def varDefaultCase
+		return @isBool ? defaultBool : defaultCase
 	end
 
 	def casesParams
@@ -32,6 +51,20 @@ class Flag
 
 	def defaultCase
 		return "."+@values.first
+	end
+
+	def defaultBool
+		return @values.first.boolValue ? "true" : "false"
+	end
+
+	def trueCase 
+		return @values.first if @values.first == "Yes" || @values.first == "yes" || @values.first == "true"
+		return @values.last
+	end
+
+	def falseCase 
+		return @values.first if @values.first == "No" || @values.first == "no" || @values.first == "false"
+		return @values.last
 	end
 
 	def description

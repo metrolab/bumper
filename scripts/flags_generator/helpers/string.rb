@@ -56,4 +56,12 @@ class String
   def blank?
     respond_to?(:empty?) ? empty? : !self
   end
+
+  def isBool
+    return self == "Yes" || self == "yes" || self == "true" || self == "No" || self == "no" || self == "false"
+  end
+
+  def boolValue
+    return self == "Yes" || self == "yes" || self == "true"
+  end
 end

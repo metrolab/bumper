@@ -2,13 +2,11 @@
 	{
 		"name": "ExampleTest1",
 		"values": ["First", "Second", "Third"],
-		"default": "Second",
 		"description": "Ajan Gramenawer"
 	},
 	{
 		"name": "PacoTest",
 		"values": ["First", "Second", "Third"],
-		"default": "First",
 		"description": "Hola que tal paco "
 	},
 	{
@@ -16,5 +14,20 @@
 		"values": ["First", "Second", "Third"],
 		"default": "Third",
 		"description": "Hola que tal juan"
+	},
+	{
+		"name": "ABoolTest",
+		"values": ["Yes", "No"],
+		"description": "Hola que tal juan modo bool"
+	},
+		{
+		"name": "ABoolTest2",
+		"values": ["Yes", "false"],
+		"description": "Hola que tal juan modo bool"
+	},
+		{
+		"name": "ABoolTest3",
+		"values": ["no", "true"],
+		"description": "Hola que tal juan modo bool"
 	}
 ]
