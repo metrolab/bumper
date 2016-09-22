@@ -53,6 +53,14 @@ enum ExampleTest1: String, BumperFlag  {
     static var enumValues: [ExampleTest1] { return [.First, .Second, .Third]}
     static var values: [String] { return enumValues.map{$0.rawValue} }
     static var description: String { return "Ajan Gramenawer" } 
+    static func fromPosition(position: Int) -> ExampleTest1 {
+        switch position { 
+            case 0: return .First
+            case 1: return .Second
+            case 2: return .Third
+            default: return .First
+        }
+    }
 }
 
 enum PacoTest: String, BumperFlag  {
@@ -61,6 +69,14 @@ enum PacoTest: String, BumperFlag  {
     static var enumValues: [PacoTest] { return [.First, .Second, .Third]}
     static var values: [String] { return enumValues.map{$0.rawValue} }
     static var description: String { return "Hola que tal paco " } 
+    static func fromPosition(position: Int) -> PacoTest {
+        switch position { 
+            case 0: return .First
+            case 1: return .Second
+            case 2: return .Third
+            default: return .First
+        }
+    }
 }
 
 enum JuanTest: String, BumperFlag  {
@@ -69,6 +85,14 @@ enum JuanTest: String, BumperFlag  {
     static var enumValues: [JuanTest] { return [.First, .Second, .Third]}
     static var values: [String] { return enumValues.map{$0.rawValue} }
     static var description: String { return "Hola que tal juan" } 
+    static func fromPosition(position: Int) -> JuanTest {
+        switch position { 
+            case 0: return .First
+            case 1: return .Second
+            case 2: return .Third
+            default: return .First
+        }
+    }
 }
 
 enum ABoolTest: String, BumperFlag  {

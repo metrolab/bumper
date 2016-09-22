@@ -71,6 +71,14 @@ class Flag
 		return @description
 	end
 
+	def fromPositionCases
+		result = Array.new
+		@values.each_with_index do |value, index|
+			result << "case #{index}: return .#{value}"
+		end
+		return result
+	end
+
 	def print
 		puts "Name: #{@name}, values: #{@values}, description: #{@description}"
 	end
