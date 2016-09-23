@@ -18,12 +18,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        pushBumperButton.layer.cornerRadius = 10;
-        pushBumperButton.layer.borderWidth = 1;
+        pushBumperButton.layer.cornerRadius = 10
+        pushBumperButton.layer.borderWidth = 1
         pushBumperButton.layer.borderColor = UIColor.darkGrayColor().CGColor
 
-        presentBumperButton.layer.cornerRadius = 10;
-        presentBumperButton.layer.borderWidth = 1;
+        presentBumperButton.layer.cornerRadius = 10
+        presentBumperButton.layer.borderWidth = 1
         presentBumperButton.layer.borderColor = UIColor.darkGrayColor().CGColor
 
     }

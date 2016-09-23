@@ -99,7 +99,6 @@ private extension BumperViewController {
             options: [], metrics: metrics, views: views))
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[table]|",
             options: [], metrics: metrics, views: views))
-
     }
 
     private func initSwitch() {
@@ -146,7 +145,6 @@ extension BumperViewController: UITableViewDelegate, UITableViewDataSource {
 
     public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
         viewModel.featureSelectedAtIndex(indexPath.row)
     }
 }
