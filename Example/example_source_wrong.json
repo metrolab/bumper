@@ -1,0 +1,20 @@
+[
+	{
+		"name": "ExampleTest1",
+		"values": ["First", "Second", "Third"],
+		"default": "Seond",
+		"description": "Ajan Gramenawer"
+	},
+	{
+		"name": "PacoTest",
+		"values": ["First", "Second", "Third"],
+		"default": "First",
+		"description": "Hola que tal paco "
+	},
+	{
+		"name": "JuanTest",
+		"values": ["First", "Second", "Third"],
+		"default": "Third",
+		"description": "Hola que tal juan"
+	}
+]

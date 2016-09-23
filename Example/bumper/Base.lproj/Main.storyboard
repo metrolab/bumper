@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1VE-kz-EGl">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="qau-W2-Z54">
+            <objects>
+                <navigationController id="1VE-kz-EGl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="goR-v8-G44">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="p3a-yN-Gze"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2aE-8i-z2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-261" y="-454"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="bumper_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +32,78 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIc-3s-XL4">
+                                <rect key="frame" x="202" y="111" width="197" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="B2e-0z-cgl"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
+                                <state key="normal" title="Push Bumper VC">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openBumper:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KOE-vK-sfd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4A-wp-sMG">
+                                <rect key="frame" x="191" y="249" width="219" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="tda-dI-y40"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
+                                <state key="normal" title="Present Bumper VC">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="presentBumper:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fpe-Rg-6Vs"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xS3-1X-6ry">
+                                <rect key="frame" x="279" y="513" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKH-fN-zxJ">
+                                <rect key="frame" x="279" y="484" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxh-6X-9c0">
+                                <rect key="frame" x="279" y="455" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p4A-wp-sMG" firstAttribute="top" secondItem="cIc-3s-XL4" secondAttribute="bottom" constant="41" id="5Tu-VR-8yu"/>
+                            <constraint firstItem="uxh-6X-9c0" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="7B0-ZW-PJF"/>
+                            <constraint firstItem="cIc-3s-XL4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="47" id="81f-8k-oGM"/>
+                            <constraint firstItem="xS3-1X-6ry" firstAttribute="top" secondItem="PKH-fN-zxJ" secondAttribute="bottom" constant="8" id="AV2-4C-61c"/>
+                            <constraint firstItem="p4A-wp-sMG" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="DpZ-bo-xag"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xS3-1X-6ry" secondAttribute="bottom" constant="66" id="HNe-OZ-Udw"/>
+                            <constraint firstItem="PKH-fN-zxJ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="IK3-fq-l9N"/>
+                            <constraint firstItem="cIc-3s-XL4" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="S9b-xz-HZU"/>
+                            <constraint firstItem="xS3-1X-6ry" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="gmY-ur-ui3"/>
+                            <constraint firstItem="PKH-fN-zxJ" firstAttribute="top" secondItem="uxh-6X-9c0" secondAttribute="bottom" constant="8" id="sgk-HD-oce"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7o8-Uj-vva"/>
+                    <connections>
+                        <outlet property="firstLabel" destination="uxh-6X-9c0" id="Zvk-Mk-f8N"/>
+                        <outlet property="presentBumperButton" destination="p4A-wp-sMG" id="JuQ-Ho-tdb"/>
+                        <outlet property="pushBumperButton" destination="cIc-3s-XL4" id="uOn-L7-g9M"/>
+                        <outlet property="secondLabel" destination="PKH-fN-zxJ" id="VEv-YY-o8n"/>
+                        <outlet property="thirdLabel" destination="xS3-1X-6ry" id="qmA-SC-Wtc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="556" y="-454"/>
         </scene>
     </scenes>
 </document>

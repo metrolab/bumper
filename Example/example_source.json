@@ -1,0 +1,17 @@
+[
+	{
+		"name": "NameOfFirstFeature",
+		"values": ["FirstValue", "SecondValue", "ThirdValue"],
+		"description": "First test description"
+	},
+	{
+		"name": "NameOfSecondFeature",
+		"values": ["Yes", "No"],
+		"description": "Boolean test description"
+	},
+    {
+		"name": "NameOfThirdFeature",
+		"values": ["true", "false"],
+		"description": "Boolean test description"
+	}
+]
