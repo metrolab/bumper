@@ -10,7 +10,6 @@ Pod::Spec.new do |s|
     DESC
     
   s.homepage         = 'https://github.com/letgoapp/bumper'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Eli Kohen' => 'eli.kohen@letgo.com' }
   s.source           = { :git => "git@github.com:letgoapp/bumper.git", :tag => s.version.to_s }

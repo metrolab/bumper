@@ -101,7 +101,7 @@
 		E307868395EF26F0BAA7BC3DD01181C2 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414114D9FD8600FA208D6152470C2DF0 /* DSL.swift */; };
 		E371AD0F533EC8E3F857A2403FB558A3 /* NSString+QCKSelectorName.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A83F0092F039C6F7AFC5D9D1E55E3BE /* NSString+QCKSelectorName.m */; };
 		E6F6FF9554A6C7EABD6B92B691751DAD /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CA5402AFA68BE2A5F70E09014318D /* BeLessThanOrEqual.swift */; };
-		E799427450575EF354F219137655EE3E /* BumperFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D61367117EC809C6C96A63DBF2C045 /* BumperFlag.swift */; };
+		E799427450575EF354F219137655EE3E /* BumperFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D61367117EC809C6C96A63DBF2C045 /* BumperFeature.swift */; };
 		E909D0D33037F3C642BBB8D47FC642B3 /* Nimble-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1C305082DBF75710A818FFBD2714D2 /* Nimble-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9A500611CF699885DE8A6BAB4E6B392 /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111139F990D8CA088F1437E67693E8D /* BeEmpty.swift */; };
 		F84F5CEE142B9301AF30946DA934E310 /* World+DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = DE3C8A356B44398ECE2F664B378A6443 /* World+DSL.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -144,7 +144,7 @@
 		0CFF847D8C75EDD1CE2BA21A60D08E00 /* Nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-dummy.m"; sourceTree = "<group>"; };
 		0F2748FABD1661E3A75F8B07E115CF96 /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
 		12FD8C45CF9591F32C21657E578112C9 /* Quick-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-prefix.pch"; sourceTree = "<group>"; };
-		14D61367117EC809C6C96A63DBF2C045 /* BumperFlag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BumperFlag.swift; sourceTree = "<group>"; };
+		14D61367117EC809C6C96A63DBF2C045 /* BumperFeature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BumperFeature.swift; sourceTree = "<group>"; };
 		14E1DC94DD47A6F91084F3EAA92AF552 /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Quick.modulemap; sourceTree = "<group>"; };
 		18D110A87EF135293B27C04BD720A8E8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B3B673592953998D5515DEF1DAA1912 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -508,7 +508,7 @@
 			children = (
 				F8BA8606D494AE3CEBF7553C6F017695 /* Bumper.swift */,
 				4D90602A8869DD9878F45D7556AFB933 /* BumperDAO.swift */,
-				14D61367117EC809C6C96A63DBF2C045 /* BumperFlag.swift */,
+				14D61367117EC809C6C96A63DBF2C045 /* BumperFeature.swift */,
 				20E70B07810C75C64507A62BEAAB926E /* BumperViewController.swift */,
 				4933C7C4F57B514EA3F047DE96907D34 /* BumperViewModel.swift */,
 			);
@@ -844,7 +844,7 @@
 				4E9691CFFC889185DE2C5CEAEAB83F46 /* bumper-dummy.m in Sources */,
 				9E62B8BA988357D3BDD386EA87E1FE5A /* Bumper.swift in Sources */,
 				E073ADBDFF624AE2C1D1C1DFAD47E2EF /* BumperDAO.swift in Sources */,
-				E799427450575EF354F219137655EE3E /* BumperFlag.swift in Sources */,
+				E799427450575EF354F219137655EE3E /* BumperFeature.swift in Sources */,
 				689DD09B73690397157A1BE30CEF4398 /* BumperViewController.swift in Sources */,
 				151DAE2825AD55A0A14AFCA0D4DC0E79 /* BumperViewModel.swift in Sources */,
 			);

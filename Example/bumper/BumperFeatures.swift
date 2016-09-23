@@ -1,5 +1,5 @@
 //
-//  BumperFlags.swift
+//  BumperFeatures.swift
 //  Letgo
 //
 //  GENERATED - DO NOT MODIFY - use flags_generator instead.
@@ -47,7 +47,7 @@ extension Bumper  {
 }
 
 
-enum ExampleTest1: String, BumperFlag  {
+enum ExampleTest1: String, BumperFeature  {
     case First, Second, Third
     static var defaultValue: String { return ExampleTest1.First.rawValue }
     static var enumValues: [ExampleTest1] { return [.First, .Second, .Third]}
@@ -63,7 +63,7 @@ enum ExampleTest1: String, BumperFlag  {
     }
 }
 
-enum PacoTest: String, BumperFlag  {
+enum PacoTest: String, BumperFeature  {
     case First, Second, Third
     static var defaultValue: String { return PacoTest.First.rawValue }
     static var enumValues: [PacoTest] { return [.First, .Second, .Third]}
@@ -79,7 +79,7 @@ enum PacoTest: String, BumperFlag  {
     }
 }
 
-enum JuanTest: String, BumperFlag  {
+enum JuanTest: String, BumperFeature  {
     case First, Second, Third
     static var defaultValue: String { return JuanTest.First.rawValue }
     static var enumValues: [JuanTest] { return [.First, .Second, .Third]}
@@ -95,7 +95,7 @@ enum JuanTest: String, BumperFlag  {
     }
 }
 
-enum ABoolTest: String, BumperFlag  {
+enum ABoolTest: String, BumperFeature  {
     case Yes, No
     static var defaultValue: String { return ABoolTest.Yes.rawValue }
     static var enumValues: [ABoolTest] { return [.Yes, .No]}
@@ -104,7 +104,7 @@ enum ABoolTest: String, BumperFlag  {
     var asBool: Bool { return self == .Yes }
 }
 
-enum ABoolTest2: String, BumperFlag  {
+enum ABoolTest2: String, BumperFeature  {
     case Yes, No
     static var defaultValue: String { return ABoolTest2.Yes.rawValue }
     static var enumValues: [ABoolTest2] { return [.Yes, .No]}
@@ -113,7 +113,7 @@ enum ABoolTest2: String, BumperFlag  {
     var asBool: Bool { return self == .Yes }
 }
 
-enum ABoolTest3: String, BumperFlag  {
+enum ABoolTest3: String, BumperFeature  {
     case No, Yes
     static var defaultValue: String { return ABoolTest3.No.rawValue }
     static var enumValues: [ABoolTest3] { return [.No, .Yes]}

@@ -11,20 +11,32 @@ import bumper
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var pushBumperButton: UIButton!
+    @IBOutlet weak var presentBumperButton: UIButton!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        Bumper.initialize()
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        pushBumperButton.layer.cornerRadius = 10;
+        pushBumperButton.layer.borderWidth = 1;
+        pushBumperButton.layer.borderColor = UIColor.darkGrayColor().CGColor
+
+        presentBumperButton.layer.cornerRadius = 10;
+        presentBumperButton.layer.borderWidth = 1;
+        presentBumperButton.layer.borderColor = UIColor.darkGrayColor().CGColor
+
     }
 
     @IBAction func openBumper(sender: AnyObject) {
         let vc = BumperViewController()
         navigationController?.pushViewController(vc, animated: true)
+    }
+
+    @IBAction func presentBumper(sender: AnyObject) {
+        let vc = BumperViewController()
+        let navC = UINavigationController(rootViewController: vc)
+        presentViewController(navC, animated: true, completion: nil)
     }
 }
 

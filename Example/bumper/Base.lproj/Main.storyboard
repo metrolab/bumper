@@ -33,21 +33,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIc-3s-XL4">
-                                <rect key="frame" x="223" y="244" width="155" height="97"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIc-3s-XL4">
+                                <rect key="frame" x="202" y="111" width="197" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="B2e-0z-cgl"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
+                                <state key="normal" title="Push Bumper VC">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="openBumper:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KOE-vK-sfd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4A-wp-sMG">
+                                <rect key="frame" x="191" y="249" width="219" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="tda-dI-y40"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
+                                <state key="normal" title="Present Bumper VC">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="presentBumper:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fpe-Rg-6Vs"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="p4A-wp-sMG" firstAttribute="top" secondItem="cIc-3s-XL4" secondAttribute="bottom" constant="41" id="5Tu-VR-8yu"/>
+                            <constraint firstItem="cIc-3s-XL4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="47" id="81f-8k-oGM"/>
+                            <constraint firstItem="p4A-wp-sMG" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="DpZ-bo-xag"/>
                             <constraint firstItem="cIc-3s-XL4" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="S9b-xz-HZU"/>
-                            <constraint firstItem="cIc-3s-XL4" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="aud-ss-fKf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7o8-Uj-vva"/>
+                    <connections>
+                        <outlet property="presentBumperButton" destination="p4A-wp-sMG" id="JuQ-Ho-tdb"/>
+                        <outlet property="pushBumperButton" destination="cIc-3s-XL4" id="uOn-L7-g9M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
