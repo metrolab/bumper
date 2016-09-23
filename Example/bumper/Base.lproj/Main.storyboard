@@ -59,19 +59,46 @@
                                     <action selector="presentBumper:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fpe-Rg-6Vs"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xS3-1X-6ry">
+                                <rect key="frame" x="279" y="513" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKH-fN-zxJ">
+                                <rect key="frame" x="279" y="484" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxh-6X-9c0">
+                                <rect key="frame" x="279" y="455" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="p4A-wp-sMG" firstAttribute="top" secondItem="cIc-3s-XL4" secondAttribute="bottom" constant="41" id="5Tu-VR-8yu"/>
+                            <constraint firstItem="uxh-6X-9c0" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="7B0-ZW-PJF"/>
                             <constraint firstItem="cIc-3s-XL4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="47" id="81f-8k-oGM"/>
+                            <constraint firstItem="xS3-1X-6ry" firstAttribute="top" secondItem="PKH-fN-zxJ" secondAttribute="bottom" constant="8" id="AV2-4C-61c"/>
                             <constraint firstItem="p4A-wp-sMG" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="DpZ-bo-xag"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xS3-1X-6ry" secondAttribute="bottom" constant="66" id="HNe-OZ-Udw"/>
+                            <constraint firstItem="PKH-fN-zxJ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="IK3-fq-l9N"/>
                             <constraint firstItem="cIc-3s-XL4" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="S9b-xz-HZU"/>
+                            <constraint firstItem="xS3-1X-6ry" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="gmY-ur-ui3"/>
+                            <constraint firstItem="PKH-fN-zxJ" firstAttribute="top" secondItem="uxh-6X-9c0" secondAttribute="bottom" constant="8" id="sgk-HD-oce"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7o8-Uj-vva"/>
                     <connections>
+                        <outlet property="firstLabel" destination="uxh-6X-9c0" id="Zvk-Mk-f8N"/>
                         <outlet property="presentBumperButton" destination="p4A-wp-sMG" id="JuQ-Ho-tdb"/>
                         <outlet property="pushBumperButton" destination="cIc-3s-XL4" id="uOn-L7-g9M"/>
+                        <outlet property="secondLabel" destination="PKH-fN-zxJ" id="VEv-YY-o8n"/>
+                        <outlet property="thirdLabel" destination="xS3-1X-6ry" id="qmA-SC-Wtc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

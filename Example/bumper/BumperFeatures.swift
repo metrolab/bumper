@@ -12,113 +12,57 @@ import bumper
 
 extension Bumper  {
     static func initialize() {
-        Bumper.initialize([ExampleTest1.self, PacoTest.self, JuanTest.self, ABoolTest.self, ABoolTest2.self, ABoolTest3.self])
+        Bumper.initialize([NameOfFirstFeature.self, NameOfSecondFeature.self, NameOfThirdFeature.self])
     } 
 
-    var exampleTest1: ExampleTest1 {
-        guard let value = Bumper.valueForKey(ExampleTest1.key) else { return .First }
-        return ExampleTest1(rawValue: value) ?? .First 
+    static var nameOfFirstFeature: NameOfFirstFeature {
+        guard let value = Bumper.valueForKey(NameOfFirstFeature.key) else { return .FirstValue }
+        return NameOfFirstFeature(rawValue: value) ?? .FirstValue 
     }
 
-    var pacoTest: PacoTest {
-        guard let value = Bumper.valueForKey(PacoTest.key) else { return .First }
-        return PacoTest(rawValue: value) ?? .First 
+    static var nameOfSecondFeature: Bool {
+        guard let value = Bumper.valueForKey(NameOfSecondFeature.key) else { return true }
+        return NameOfSecondFeature(rawValue: value)?.asBool ?? true
     }
 
-    var juanTest: JuanTest {
-        guard let value = Bumper.valueForKey(JuanTest.key) else { return .First }
-        return JuanTest(rawValue: value) ?? .First 
-    }
-
-    var aBoolTest: Bool {
-        guard let value = Bumper.valueForKey(ABoolTest.key) else { return true }
-        return ABoolTest(rawValue: value)?.asBool ?? true
-    }
-
-    var aBoolTest2: Bool {
-        guard let value = Bumper.valueForKey(ABoolTest2.key) else { return true }
-        return ABoolTest2(rawValue: value)?.asBool ?? true
-    }
-
-    var aBoolTest3: Bool {
-        guard let value = Bumper.valueForKey(ABoolTest3.key) else { return false }
-        return ABoolTest3(rawValue: value)?.asBool ?? false
+    static var nameOfThirdFeature: Bool {
+        guard let value = Bumper.valueForKey(NameOfThirdFeature.key) else { return true }
+        return NameOfThirdFeature(rawValue: value)?.asBool ?? true
     } 
 }
 
 
-enum ExampleTest1: String, BumperFeature  {
-    case First, Second, Third
-    static var defaultValue: String { return ExampleTest1.First.rawValue }
-    static var enumValues: [ExampleTest1] { return [.First, .Second, .Third]}
+enum NameOfFirstFeature: String, BumperFeature  {
+    case FirstValue, SecondValue, ThirdValue
+    static var defaultValue: String { return NameOfFirstFeature.FirstValue.rawValue }
+    static var enumValues: [NameOfFirstFeature] { return [.FirstValue, .SecondValue, .ThirdValue]}
     static var values: [String] { return enumValues.map{$0.rawValue} }
-    static var description: String { return "Ajan Gramenawer" } 
-    static func fromPosition(position: Int) -> ExampleTest1 {
+    static var description: String { return "First test description" } 
+    static func fromPosition(position: Int) -> NameOfFirstFeature {
         switch position { 
-            case 0: return .First
-            case 1: return .Second
-            case 2: return .Third
-            default: return .First
+            case 0: return .FirstValue
+            case 1: return .SecondValue
+            case 2: return .ThirdValue
+            default: return .FirstValue
         }
     }
 }
 
-enum PacoTest: String, BumperFeature  {
-    case First, Second, Third
-    static var defaultValue: String { return PacoTest.First.rawValue }
-    static var enumValues: [PacoTest] { return [.First, .Second, .Third]}
-    static var values: [String] { return enumValues.map{$0.rawValue} }
-    static var description: String { return "Hola que tal paco " } 
-    static func fromPosition(position: Int) -> PacoTest {
-        switch position { 
-            case 0: return .First
-            case 1: return .Second
-            case 2: return .Third
-            default: return .First
-        }
-    }
-}
-
-enum JuanTest: String, BumperFeature  {
-    case First, Second, Third
-    static var defaultValue: String { return JuanTest.First.rawValue }
-    static var enumValues: [JuanTest] { return [.First, .Second, .Third]}
-    static var values: [String] { return enumValues.map{$0.rawValue} }
-    static var description: String { return "Hola que tal juan" } 
-    static func fromPosition(position: Int) -> JuanTest {
-        switch position { 
-            case 0: return .First
-            case 1: return .Second
-            case 2: return .Third
-            default: return .First
-        }
-    }
-}
-
-enum ABoolTest: String, BumperFeature  {
+enum NameOfSecondFeature: String, BumperFeature  {
     case Yes, No
-    static var defaultValue: String { return ABoolTest.Yes.rawValue }
-    static var enumValues: [ABoolTest] { return [.Yes, .No]}
+    static var defaultValue: String { return NameOfSecondFeature.Yes.rawValue }
+    static var enumValues: [NameOfSecondFeature] { return [.Yes, .No]}
     static var values: [String] { return enumValues.map{$0.rawValue} }
-    static var description: String { return "Hola que tal juan modo bool" } 
+    static var description: String { return "Boolean test description" } 
     var asBool: Bool { return self == .Yes }
 }
 
-enum ABoolTest2: String, BumperFeature  {
+enum NameOfThirdFeature: String, BumperFeature  {
     case Yes, No
-    static var defaultValue: String { return ABoolTest2.Yes.rawValue }
-    static var enumValues: [ABoolTest2] { return [.Yes, .No]}
+    static var defaultValue: String { return NameOfThirdFeature.Yes.rawValue }
+    static var enumValues: [NameOfThirdFeature] { return [.Yes, .No]}
     static var values: [String] { return enumValues.map{$0.rawValue} }
-    static var description: String { return "Hola que tal juan modo bool" } 
-    var asBool: Bool { return self == .Yes }
-}
-
-enum ABoolTest3: String, BumperFeature  {
-    case No, Yes
-    static var defaultValue: String { return ABoolTest3.No.rawValue }
-    static var enumValues: [ABoolTest3] { return [.No, .Yes]}
-    static var values: [String] { return enumValues.map{$0.rawValue} }
-    static var description: String { return "Hola que tal juan modo bool" } 
+    static var description: String { return "Boolean test description" } 
     var asBool: Bool { return self == .Yes }
 }
 
