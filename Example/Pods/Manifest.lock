@@ -1,5 +1,5 @@
 PODS:
-  - bumper (0.1.0)
+  - bumper (0.1.1)
   - Nimble (3.2.0)
   - Quick (0.9.3)
 
@@ -13,10 +13,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  bumper: 1c974c24e7187245f298f6c1f84f638026276c5b
+  bumper: bb10c3595f1ce4e3b006e16b7c9aa360891908d1
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   Quick: 13a2a2b19a5d8e3ed4fd0c36ee46597fd77ebf71
 
-PODFILE CHECKSUM: 5aab33661e0a7b00a12688341fed96472d31b5ad
+PODFILE CHECKSUM: ea18c3285d62ebc9c6761308efbd61558f19878c
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2
