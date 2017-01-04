@@ -67,13 +67,13 @@ private extension BumperViewController {
         enableBumperSwitch.translatesAutoresizingMaskIntoConstraints = false
         enableBumperContainer.addSubview(enableBumperSwitch)
 
-        var views = [String: AnyObject]()
+        var views = [String: Any]()
         views["container"] = enableBumperContainer
         views["label"] = enableLabel
         views["switch"] = enableBumperSwitch
 
-        var metrics = [String: AnyObject]()
-        metrics["viewsMargin"] = CGFloat(10) as AnyObject?
+        var metrics = [String: Any]()
+        metrics["viewsMargin"] = CGFloat(10)
 
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[container]|",
             options: [], metrics: nil, views: views))
@@ -87,13 +87,13 @@ private extension BumperViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
 
-        var views = [String: AnyObject]()
+        var views = [String: Any]()
         views["topLayoutGuide"] = topLayoutGuide
         views["container"] = enableBumperContainer
         views["table"] = tableView
 
-        var metrics = [String: AnyObject]()
-        metrics["containerH"] = CGFloat(40) as AnyObject?
+        var metrics = [String: Any]()
+        metrics["containerH"] = CGFloat(40)
 
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[topLayoutGuide]-0-[container(containerH)]-0-[table]|",
             options: [], metrics: metrics, views: views))
