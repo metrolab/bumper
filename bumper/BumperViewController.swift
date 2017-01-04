@@ -8,13 +8,13 @@
 
 import UIKit
 
-open class BumperViewController: UIViewController {
+public class BumperViewController: UIViewController {
 
-    fileprivate let tableView = UITableView()
-    fileprivate let enableBumperContainer = UIView()
-    fileprivate let enableBumperSwitch = UISwitch()
+    private let tableView = UITableView()
+    private let enableBumperContainer = UIView()
+    private let enableBumperSwitch = UISwitch()
 
-    fileprivate let viewModel: BumperViewModel
+    private let viewModel: BumperViewModel
 
     public convenience init() {
         self.init(viewModel: BumperViewModel())
@@ -30,7 +30,7 @@ open class BumperViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override open func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
@@ -120,9 +120,9 @@ private extension BumperViewController {
 // MARK: TableView
 
 extension BumperViewController: UITableViewDelegate, UITableViewDataSource {
-    fileprivate static let cellReuseIdentifier = "bumperCell"
+    private static let cellReuseIdentifier = "bumperCell"
 
-    fileprivate func initTableView() {
+    private func initTableView() {
         tableView.delegate = self
         tableView.dataSource = self
     }

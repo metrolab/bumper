@@ -8,19 +8,19 @@
 
 import Foundation
 
-open class Bumper {
+public class Bumper {
 
     // MARK: - Public static
 
-    open static var enabled: Bool {
+    public static var enabled: Bool {
         return Bumper.sharedInstance.enabled
     }
 
-    open static func initialize(_ bumperFeatures: [BumperFeature.Type]) {
+    public static func initialize(_ bumperFeatures: [BumperFeature.Type]) {
         Bumper.sharedInstance.initialize(bumperFeatures)
     }
 
-    open static func valueForKey(_ key: String) -> String? {
+    public static func valueForKey(_ key: String) -> String? {
         return Bumper.sharedInstance.valueForKey(key)
     }
 
@@ -28,16 +28,16 @@ open class Bumper {
 
     static let sharedInstance: Bumper = Bumper(bumperDAO: UserDefaults.standard)
 
-    fileprivate static let bumperEnabledKey = "bumper_enabled"
-    fileprivate static let bumperPrefix = "bumper_"
+    private static let bumperEnabledKey = "bumper_enabled"
+    private static let bumperPrefix = "bumper_"
 
     var enabled: Bool = false {
         didSet {
             bumperDAO.setBool(enabled, forKey: Bumper.bumperEnabledKey)
         }
     }
-    fileprivate var cache = [String: String]()
-    fileprivate var features: [BumperFeature.Type] = []
+    private var cache = [String: String]()
+    private var features: [BumperFeature.Type] = []
 
     var bumperViewData: [BumperViewData] {
         return features.flatMap { featureType in
@@ -46,7 +46,7 @@ open class Bumper {
         }
     }
 
-    fileprivate let bumperDAO: BumperDAO
+    private let bumperDAO: BumperDAO
 
     init(bumperDAO: BumperDAO) {
         self.bumperDAO = bumperDAO
