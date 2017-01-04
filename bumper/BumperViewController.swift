@@ -10,11 +10,11 @@ import UIKit
 
 public class BumperViewController: UIViewController {
 
-    private let tableView = UITableView()
-    private let enableBumperContainer = UIView()
-    private let enableBumperSwitch = UISwitch()
+    fileprivate let tableView = UITableView()
+    fileprivate let enableBumperContainer = UIView()
+    fileprivate let enableBumperSwitch = UISwitch()
 
-    private let viewModel: BumperViewModel
+    fileprivate let viewModel: BumperViewModel
 
     public convenience init() {
         self.init(viewModel: BumperViewModel())
@@ -45,7 +45,7 @@ public class BumperViewController: UIViewController {
 private extension BumperViewController {
     func setupUI() {
         if let viewControllers = navigationController?.viewControllers, viewControllers.count == 1 {
-            let leftItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(dismiss))
+            let leftItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(dismissViewController))
             navigationItem.leftBarButtonItem = leftItem
         }
         title = "Bumper"
@@ -111,7 +111,7 @@ private extension BumperViewController {
         viewModel.setEnabled(enableBumperSwitch.isOn)
     }
 
-    dynamic func dismiss() {
+    dynamic func dismissViewController() {
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -120,9 +120,9 @@ private extension BumperViewController {
 // MARK: TableView
 
 extension BumperViewController: UITableViewDelegate, UITableViewDataSource {
-    private static let cellReuseIdentifier = "bumperCell"
+    fileprivate static let cellReuseIdentifier = "bumperCell"
 
-    private func initTableView() {
+    fileprivate func initTableView() {
         tableView.delegate = self
         tableView.dataSource = self
     }

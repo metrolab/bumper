@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     @IBAction func presentBumper(_ sender: AnyObject) {
         let vc = BumperViewController()
         let navC = UINavigationController(rootViewController: vc)
-        presentViewController(navC, animated: true, completion: nil)
+        present(navC, animated: true, completion: nil)
     }
 }
 

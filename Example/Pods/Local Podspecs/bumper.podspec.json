@@ -2,7 +2,7 @@
   "name": "bumper",
   "version": "0.2.0",
   "summary": "A/B Testing debug helper framework for iOS",
-  "description": "Letgo Feature flags library. \nIt not only allows Enabling/disabling parts of the code but select several cases for that parts.\nIncludes a ruby script that generates all boilerplate for all A/B tests from a json file that \ncontains the info.",
+  "description": "Letgo Feature flags library.\nIt not only allows Enabling/disabling parts of the code but select several cases for that parts.\nIncludes a ruby script that generates all boilerplate for all A/B tests from a json file that\ncontains the info.",
   "homepage": "https://github.com/letgoapp/bumper",
   "license": {
     "type": "MIT",
@@ -10,7 +10,7 @@
   },
   "authors": {
     "Eli Kohen": "eli.kohen@letgo.com",
-    "Albert Hernández": "albert@letgo.com",
+    "Albert Hernández": "albert@letgo.com"
   },
   "source": {
     "git": "git@github.com:letgoapp/bumper.git",

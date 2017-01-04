@@ -12,5 +12,5 @@ protocol BumperDAO {
     func setBool(_ value: Bool, forKey defaultName: String)
     func boolForKey(_ defaultName: String) -> Bool
     func stringForKey(_ defaultName: String) -> String?
-    func setObject(_ value: AnyObject?, forKey defaultName: String)
+    func setObject(_ value: Any?, forKey defaultName: String)
 }

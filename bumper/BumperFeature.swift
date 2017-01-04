@@ -17,6 +17,6 @@ public protocol BumperFeature {
 
 public extension BumperFeature {
     static var key: String {
-        return String(describing: Self)
+        return String(describing: self)
     }
 }
