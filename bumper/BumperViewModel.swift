@@ -24,10 +24,10 @@ class BumperViewModel {
 
     weak var delegate: BumperViewModelDelegate?
 
-    fileprivate(set) var enabled: Bool
-    fileprivate var viewData: [BumperViewData]
+    private(set) var enabled: Bool
+    private var viewData: [BumperViewData]
 
-    fileprivate let bumper: Bumper
+    private let bumper: Bumper
 
     convenience init() {
         self.init(bumper: Bumper.sharedInstance)
