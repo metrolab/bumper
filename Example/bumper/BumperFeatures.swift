@@ -38,7 +38,7 @@ enum NameOfFirstFeature: String, BumperFeature  {
     static var enumValues: [NameOfFirstFeature] { return [.FirstValue, .SecondValue, .ThirdValue]}
     static var values: [String] { return enumValues.map{$0.rawValue} }
     static var description: String { return "First test description" } 
-    static func fromPosition(position: Int) -> NameOfFirstFeature {
+    static func fromPosition(_ position: Int) -> NameOfFirstFeature {
         switch position { 
             case 0: return .FirstValue
             case 1: return .SecondValue

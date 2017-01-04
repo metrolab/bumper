@@ -23,11 +23,11 @@ class ViewController: UIViewController {
 
         pushBumperButton.layer.cornerRadius = 10
         pushBumperButton.layer.borderWidth = 1
-        pushBumperButton.layer.borderColor = UIColor.darkGrayColor().CGColor
+        pushBumperButton.layer.borderColor = UIColor.darkGray.cgColor
 
         presentBumperButton.layer.cornerRadius = 10
         presentBumperButton.layer.borderWidth = 1
-        presentBumperButton.layer.borderColor = UIColor.darkGrayColor().CGColor
+        presentBumperButton.layer.borderColor = UIColor.darkGray.cgColor
 
 
         // Just to show creation of enums by helper
@@ -35,19 +35,19 @@ class ViewController: UIViewController {
         print("First feature from position: \(firstFeature)")
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         firstLabel.text = "FirstFeature: \(Bumper.nameOfFirstFeature)"
         secondLabel.text = "SecondFeature: \(Bumper.nameOfSecondFeature)"
         thirdLabel.text = "ThirdFeature: \(Bumper.nameOfThirdFeature)"
     }
 
-    @IBAction func openBumper(sender: AnyObject) {
+    @IBAction func openBumper(_ sender: AnyObject) {
         let vc = BumperViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    @IBAction func presentBumper(sender: AnyObject) {
+    @IBAction func presentBumper(_ sender: AnyObject) {
         let vc = BumperViewController()
         let navC = UINavigationController(rootViewController: vc)
         presentViewController(navC, animated: true, completion: nil)

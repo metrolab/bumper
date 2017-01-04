@@ -8,36 +8,36 @@
 
 import Foundation
 
-public class Bumper {
+open class Bumper {
 
     // MARK: - Public static
 
-    public static var enabled: Bool {
+    open static var enabled: Bool {
         return Bumper.sharedInstance.enabled
     }
 
-    public static func initialize(bumperFeatures: [BumperFeature.Type]) {
+    open static func initialize(_ bumperFeatures: [BumperFeature.Type]) {
         Bumper.sharedInstance.initialize(bumperFeatures)
     }
 
-    public static func valueForKey(key: String) -> String? {
+    open static func valueForKey(_ key: String) -> String? {
         return Bumper.sharedInstance.valueForKey(key)
     }
 
     // MARK: - Internal
 
-    static let sharedInstance: Bumper = Bumper(bumperDAO: NSUserDefaults.standardUserDefaults())
+    static let sharedInstance: Bumper = Bumper(bumperDAO: UserDefaults.standard)
 
-    private static let bumperEnabledKey = "bumper_enabled"
-    private static let bumperPrefix = "bumper_"
+    fileprivate static let bumperEnabledKey = "bumper_enabled"
+    fileprivate static let bumperPrefix = "bumper_"
 
     var enabled: Bool = false {
         didSet {
             bumperDAO.setBool(enabled, forKey: Bumper.bumperEnabledKey)
         }
     }
-    private var cache = [String: String]()
-    private var features: [BumperFeature.Type] = []
+    fileprivate var cache = [String: String]()
+    fileprivate var features: [BumperFeature.Type] = []
 
     var bumperViewData: [BumperViewData] {
         return features.flatMap { featureType in
@@ -46,13 +46,13 @@ public class Bumper {
         }
     }
 
-    private let bumperDAO: BumperDAO
+    fileprivate let bumperDAO: BumperDAO
 
     init(bumperDAO: BumperDAO) {
         self.bumperDAO = bumperDAO
     }
 
-    func initialize(bumperFeatures: [BumperFeature.Type]) {
+    func initialize(_ bumperFeatures: [BumperFeature.Type]) {
         enabled = bumperDAO.boolForKey(Bumper.bumperEnabledKey)
 
         cache.removeAll()
@@ -63,14 +63,14 @@ public class Bumper {
         })
     }
 
-    func valueForKey(key: String) -> String? {
+    func valueForKey(_ key: String) -> String? {
         return cache[key]
     }
 
-    func setValueForKey(key: String, value: String) {
+    func setValueForKey(_ key: String, value: String) {
         cache[key] = value
         bumperDAO.setObject(value, forKey: Bumper.bumperPrefix + key)
     }
 }
 
-extension NSUserDefaults: BumperDAO {}
+extension UserDefaults: BumperDAO {}
