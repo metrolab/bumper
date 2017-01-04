@@ -42,7 +42,7 @@ public class BumperViewController: UIViewController {
 
 // MARK: - UI
 
-private extension BumperViewController {
+fileprivate extension BumperViewController {
     func setupUI() {
         if let viewControllers = navigationController?.viewControllers, viewControllers.count == 1 {
             let leftItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(dismissViewController))
