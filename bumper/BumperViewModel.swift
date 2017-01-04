@@ -24,10 +24,10 @@ class BumperViewModel {
 
     weak var delegate: BumperViewModelDelegate?
 
-    private(set) var enabled: Bool
-    private var viewData: [BumperViewData]
+    fileprivate(set) var enabled: Bool
+    fileprivate var viewData: [BumperViewData]
 
-    private let bumper: Bumper
+    fileprivate let bumper: Bumper
 
     convenience init() {
         self.init(bumper: Bumper.sharedInstance)
@@ -43,21 +43,21 @@ class BumperViewModel {
         return viewData.count
     }
 
-    func featureNameAtIndex(_ index: Int) -> String {
+    func featureName(at index: Int) -> String {
         return viewData[index].description
     }
 
-    func featureValueAtIndex(_ index: Int) -> String {
+    func featureValue(at index: Int) -> String {
         return viewData[index].value
     }
 
-    func featureSelectedAtIndex(_ index: Int) {
+    func didSelectFeature(at index: Int) {
         delegate?.showFeature(index, itemsSelection: viewData[index].options)
     }
 
-    func selectedFeature(_ index: Int, item: String) {
+    func updateFeature(at index: Int,with item: String) {
         let data = viewData[index]
-        bumper.setValueForKey(data.key, value: item)
+        bumper.setValue(for: data.key, value: item)
         viewData = bumper.bumperViewData
         delegate?.featuresUpdated()
     }

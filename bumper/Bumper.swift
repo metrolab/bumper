@@ -20,8 +20,8 @@ public class Bumper {
         Bumper.sharedInstance.initialize(bumperFeatures)
     }
 
-    public static func valueForKey(_ key: String) -> String? {
-        return Bumper.sharedInstance.valueForKey(key)
+    public static func value(for key: String) -> String? {
+        return Bumper.sharedInstance.value(for: key)
     }
 
     // MARK: - Internal
@@ -41,7 +41,7 @@ public class Bumper {
 
     var bumperViewData: [BumperViewData] {
         return features.flatMap { featureType in
-            let value = valueForKey(featureType.key) ?? featureType.defaultValue
+            let value = self.value(for: featureType.key) ?? featureType.defaultValue
             return BumperViewData(key: featureType.key, description: featureType.description, value: value, options: featureType.values)
         }
     }
@@ -63,11 +63,11 @@ public class Bumper {
         })
     }
 
-    func valueForKey(_ key: String) -> String? {
+    func value(for key: String) -> String? {
         return cache[key]
     }
 
-    func setValueForKey(_ key: String, value: String) {
+    func setValue(for key: String, value: String) {
         cache[key] = value
         bumperDAO.setObject(value, forKey: Bumper.bumperPrefix + key)
     }

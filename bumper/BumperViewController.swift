@@ -138,14 +138,14 @@ extension BumperViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell = UITableViewCell(style: .value1, reuseIdentifier: BumperViewController.cellReuseIdentifier)
         }
-        cell.textLabel?.text = viewModel.featureNameAtIndex(indexPath.row)
-        cell.detailTextLabel?.text = viewModel.featureValueAtIndex(indexPath.row)
+        cell.textLabel?.text = viewModel.featureName(at: indexPath.row)
+        cell.detailTextLabel?.text = viewModel.featureValue(at: indexPath.row)
         return cell
     }
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        viewModel.featureSelectedAtIndex(indexPath.row)
+        viewModel.didSelectFeature(at: indexPath.row)
     }
 }
 
@@ -161,7 +161,7 @@ extension BumperViewController: BumperViewModelDelegate {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         for item in items {
             let action = UIAlertAction(title: item, style: .default) { [weak self] _ in
-                self?.viewModel.selectedFeature(feature, item: item)
+                self?.viewModel.updateFeature(at: feature, with: item)
             }
             alert.addAction(action)
         }

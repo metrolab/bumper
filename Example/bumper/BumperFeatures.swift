@@ -16,17 +16,17 @@ extension Bumper  {
     } 
 
     static var nameOfFirstFeature: NameOfFirstFeature {
-        guard let value = Bumper.valueForKey(NameOfFirstFeature.key) else { return .firstValue }
+        guard let value = Bumper.value(for: NameOfFirstFeature.key) else { return .firstValue }
         return NameOfFirstFeature(rawValue: value) ?? .firstValue 
     }
 
     static var nameOfSecondFeature: Bool {
-        guard let value = Bumper.valueForKey(NameOfSecondFeature.key) else { return true }
+        guard let value = Bumper.value(for: NameOfSecondFeature.key) else { return true }
         return NameOfSecondFeature(rawValue: value)?.asBool ?? true
     }
 
     static var nameOfThirdFeature: Bool {
-        guard let value = Bumper.valueForKey(NameOfThirdFeature.key) else { return true }
+        guard let value = Bumper.value(for: NameOfThirdFeature.key) else { return true }
         return NameOfThirdFeature(rawValue: value)?.asBool ?? true
     } 
 }
