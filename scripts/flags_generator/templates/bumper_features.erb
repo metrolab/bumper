@@ -29,8 +29,8 @@ enum <%= flag.objectName %>: String, BumperFeature  {
     static var enumValues: [<%= flag.objectName %>] { return <%= flag.allCases %>}
     static var values: [String] { return enumValues.map{$0.rawValue} }
     static var description: String { return "<%= flag.description %>" } <% if flag.isBool %>
-    var asBool: Bool { return self == .Yes }<% else %>
-    static func fromPosition(position: Int) -> <%= flag.objectName %> {
+    var asBool: Bool { return self == .yes }<% else %>
+    static func fromPosition(_ position: Int) -> <%= flag.objectName %> {
         switch position { <% flag.fromPositionCases.each do |switchCase| %>
             <%= switchCase %><% end %>
             default: return <%= flag.defaultCase %>
