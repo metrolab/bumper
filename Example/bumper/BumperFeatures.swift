@@ -12,7 +12,11 @@ import bumper
 
 extension Bumper  {
     static func initialize() {
-        Bumper.initialize([NameOfFirstFeature.self, NameOfSecondFeature.self, NameOfThirdFeature.self])
+        var flags = [BumperFeature.Type]()
+        flags.append(NameOfFirstFeature.self)
+        flags.append(NameOfSecondFeature.self)
+        flags.append(NameOfThirdFeature.self)
+        Bumper.initialize(flags)
     } 
 
     static var nameOfFirstFeature: NameOfFirstFeature {
