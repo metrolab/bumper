@@ -7,7 +7,7 @@
 	{
 		"name": "NameOfSecondFeature",
 		"values": ["Yes", "No"],
-		"description": "Boolean test description"
+		"description": "Boolean test very long description Boolean test very long description Boolean test very long description Boolean test very long description"
 	},
     {
 		"name": "NameOfThirdFeature",
