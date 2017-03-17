@@ -57,7 +57,7 @@ enum NameOfSecondFeature: String, BumperFeature  {
     static var defaultValue: String { return NameOfSecondFeature.yes.rawValue }
     static var enumValues: [NameOfSecondFeature] { return [.yes, .no]}
     static var values: [String] { return enumValues.map{$0.rawValue} }
-    static var description: String { return "Boolean test description" } 
+    static var description: String { return "Boolean test very long description Boolean test very long description Boolean test very long description Boolean test very long description" } 
     var asBool: Bool { return self == .yes }
 }
 
