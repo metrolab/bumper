@@ -107,11 +107,11 @@ fileprivate extension BumperViewController {
         enableBumperSwitch.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
     }
 
-    dynamic func switchValueChanged() {
+    @objc dynamic func switchValueChanged() {
         viewModel.setEnabled(enableBumperSwitch.isOn)
     }
 
-    dynamic func dismissViewController() {
+    @objc dynamic func dismissViewController() {
         self.dismiss(animated: true, completion: nil)
     }
 }
