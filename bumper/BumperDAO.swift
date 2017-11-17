@@ -18,7 +18,8 @@ protocol BumperDAO {
     func set(_ value: Any?, forKey defaultName: String)
     
     #if (RX_BUMPER)
-    func observeString(for key: String) -> Observable<String?>
+    func stringObservable(for key: String) -> Observable<String?>
+    func boolObservable(for key: String) -> Observable<Bool?>
     #endif
 }
 
@@ -26,8 +27,12 @@ protocol BumperDAO {
     import RxCocoa
     
     extension UserDefaults: BumperDAO {
-        func observeString(for key: String) -> Observable<String?> {
+        func stringObservable(for key: String) -> Observable<String?> {
             return rx.observe(String.self, key)
+        }
+        
+        func boolObservable(for key: String) -> Observable<Bool?> {
+            return rx.observe(Bool.self, key)
         }
     }
 #else
