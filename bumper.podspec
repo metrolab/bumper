@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
     rx.dependency 'bumper/Core'
     rx.xcconfig =  
         { 'OTHER_SWIFT_FLAGS' => '$(inherited) -D RX_BUMPER' }
-    rx.dependency 'RxSwift', '~> 4.0.0'
-    rx.dependency 'RxCocoa', '~> 4.0.0'
+    rx.dependency 'RxSwift', '~> 4.1'
+    rx.dependency 'RxCocoa', '~> 4.1'
   end
 end

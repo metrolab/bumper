@@ -4,13 +4,13 @@ PODS:
   - bumper/Core (1.1.0)
   - bumper/RxObserving (1.1.0):
     - bumper/Core
-    - RxCocoa (~> 4.0.0)
-    - RxSwift (~> 4.0.0)
-  - Nimble (7.0.2)
+    - RxCocoa (~> 4.1)
+    - RxSwift (~> 4.1)
+  - Nimble (7.0.3)
   - Quick (1.2.0)
-  - RxCocoa (4.0.0):
+  - RxCocoa (4.1.1):
     - RxSwift (~> 4.0)
-  - RxSwift (4.0.0)
+  - RxSwift (4.1.1)
 
 DEPENDENCIES:
   - bumper (from `../`)
@@ -23,11 +23,11 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  bumper: ed5b41aee6572a18474607eb234b3114144ce930
-  Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
+  bumper: 1f02b35df75764291bda0ec9aa90a9558d02e8f1
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
-  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  RxCocoa: fd0862fd2df95fa55562ad28ffd2522c25eb4a85
+  RxSwift: c6e3b1c7b325c7d121cd4327e9d98b7ed746b570
 
 PODFILE CHECKSUM: cc0d06121bc5d982312da84c4cc95f59cccd984b
 
